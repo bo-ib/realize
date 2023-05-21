@@ -1,0 +1,13 @@
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token%}
+    <a href="{%url 'home'%}">Home</a>
+    {{form.as_p}}
+    {{form.media}}
+   
+
+    <button  type="submit">Submit</button>
+
+
+
+</form 
+

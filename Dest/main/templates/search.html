@@ -1,0 +1,59 @@
+{% extends 'main.html'%}
+
+
+
+{% block content %}
+
+
+{% if searched %}
+
+
+
+<div class="container-fluid" style="padding-top: 30px;">
+    <div class="row">
+        <div class="col-sm-9" >
+            <div class="container-fluid">
+                <div class="row">
+                    {% for search in job %}
+                    <div class="col-12 col-md-6 col-lg-4 col-sm-6 mb-4">
+                   
+                      <div class="card" style="width: 18rem;">
+                        <img src="{{search.image.url}}" style="height:8rem" class="card-img-top" alt="...">
+                        <div class="card-body">
+                       <a style="text-decoration: none;" href="{% url 'details' search.id %}">   <h5 class="card-title">{{search.title|safe}}</h5></a> 
+                       
+                      
+                          <small>{{search.date}}</small>
+                        </div>
+                      </div>
+
+                      </div>
+                       {% endfor %}
+                  
+                 
+                </div>
+              </div>
+          </div>
+      <div class="col-sm-3 g-0 side">
+        <div class="card" style="width: 18rem;" id="side">
+            <img src="https://images.unsplash.com/photo-1612383401597-cdfb8bdfa0d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZGFyayUyMGNvbXB1dGVyfGVufDB8fDB8fA%3D%3D&w=1000&q=80" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <a href="#"  class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+    
+       
+      </div>
+
+
+{% endif %}
+
+
+{% endblock content%}
